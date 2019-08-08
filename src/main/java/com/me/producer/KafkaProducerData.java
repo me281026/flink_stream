@@ -1,12 +1,10 @@
-package com.hubao.producer;
+package com.me.producer;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.common.serialization.StringDeserializer;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Properties;
 
 public class KafkaProducerData {

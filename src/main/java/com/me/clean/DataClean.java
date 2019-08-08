@@ -1,4 +1,4 @@
-package com.hubao.clean;
+package com.me.clean;
 
 public class DataClean {
 }

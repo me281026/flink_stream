@@ -1,4 +1,4 @@
-package com.hubao.flink;
+package com.me.flink;
 
 import org.apache.commons.net.ntp.TimeStamp;
 import org.apache.flink.api.common.functions.MapFunction;

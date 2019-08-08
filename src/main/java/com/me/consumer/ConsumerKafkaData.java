@@ -1,4 +1,4 @@
-package com.hubao.consumer;
+package com.me.consumer;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
