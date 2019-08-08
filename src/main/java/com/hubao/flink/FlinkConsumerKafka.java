@@ -23,8 +23,7 @@ import java.util.Properties;
 
 public class FlinkConsumerKafka {
 
-    private static String zkServer = "192.168.40.85,192.168.40.86,192.168.40.87";
-    //private static String zkServer = "192.168.40.230,192.168.40.231,192.168.40.232";
+    private static String zkServer = "zkServer1,zkServer2,zkServer3";
     private static String port = "2181";
     private static final String topic = "online_return_data";
     private static final String cf = "demo_data";
@@ -41,9 +40,9 @@ public class FlinkConsumerKafka {
         //配置properties对象和参数,kafka的集群参数设置
         Properties properties = new Properties();
         //设置kafka的集群位置和端口号
-        properties.setProperty("bootstrap.servers", "192.168.20.140:9092,192.168.20.141:9093,192.168.20.142:9094");
+        properties.setProperty("bootstrap.servers", "kafka01:9092,kafka01:9093,kafka01:9094");
         properties.setProperty("group.id", "group16");
-        properties.setProperty("fs.default-scheme","hdfs://192.168.40.230:8020");
+        properties.setProperty("fs.default-scheme","hdfs://hdfs110:8020");
         properties.put("enable.auto.commit", true);
         properties.put("max.poll.records", 1000);
 
@@ -63,7 +62,7 @@ public class FlinkConsumerKafka {
 
     //写入HDFS
     public static void writeToHDFS(StreamExecutionEnvironment executionEnvironment, DataStreamSource<String> dataStreamSource) {
-        BucketingSink<String> sink = new BucketingSink<String>("hdfs://192.168.40.230:9000/output/test");
+        BucketingSink<String> sink = new BucketingSink<String>("hdfs://hdfs110:9000/output/test");
         sink.setWriter(new StringWriter<>()).setBatchSize(1024*1024);
         dataStreamSource.addSink(sink);
         try {

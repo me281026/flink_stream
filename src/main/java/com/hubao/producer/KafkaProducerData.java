@@ -16,7 +16,6 @@ public class KafkaProducerData {
         Properties properties = new Properties();
         //kafka地址
         properties.put("bootstrap.servers", "192.168.20.140:9092,192.168.20.141:9093,192.168.20.142:9094");
-        //properties.put("bootstrap.servers", "192.168.40.230:9092,192.168.40.231:9093,192.168.40.232:9094");
         //key.serializer: 键序列化，默认org.apache.kafka.common.serialization.StringDeserializer。
         properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         //value.deserializer:值序列化，默认org.apache.kafka.common.serialization.StringDeserializer。

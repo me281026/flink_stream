@@ -26,10 +26,8 @@ public class ConsumerKafkaData {
         //创建propertise参数
         Properties properties = new Properties();
         //kafka地址
-        //properties.put("bootstrap.servers", "192.168.20.140:9092,192.168.20.141:9093,192.168.20.142:9094");
         properties.put("bootstrap.servers", "192.168.20.140:9092,192.168.20.141:9092,192.168.20.142:9092");
         //properties.put("bootstrap.servers", "kafka1:9092,kafka2:9092,kafka3:9092");
-        //properties.put("bootstrap.servers", "192.168.40.230:9092,192.168.40.231:9093,192.168.40.232:9094");
 
         //group.id：组名 不同组名可以重复消费。例如你先使用了组名A消费了kafka的1000条数据，
         //但是你还想再次进行消费这1000条数据，并且不想重新去产生，那么这里你只需要更改组名就可以重复消费了。
